@@ -60,8 +60,8 @@ namespace FidoApi.Controllers
 
                 var options = _fido2.RequestNewCredential(user, existingKeys, authenticatorSelection, attType.ToEnum<AttestationConveyancePreference>(), exts);
 
-                // 4. Temporarily store options, session/in-memory cache/redis/db
-                HttpContext.Session.SetString("fido2.attestationOptions", options.ToJson());
+                //// 4. Temporarily store options, session/in-memory cache/redis/db
+                //HttpContext.Session.SetString("fido2.attestationOptions", options.ToJson());
 
                 // 5. return options to client
                 _logger.LogInformation("makeCredentialOptions: ", options);
